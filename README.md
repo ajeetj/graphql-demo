@@ -1,2 +1,2 @@
-#GraphQL JAVA DEMO
+# GraphQL JAVA DEMO
 
