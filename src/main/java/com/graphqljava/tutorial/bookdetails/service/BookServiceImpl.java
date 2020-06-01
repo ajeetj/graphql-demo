@@ -3,6 +3,7 @@ package com.graphqljava.tutorial.bookdetails.service;
 import com.google.common.collect.ImmutableMap;
 import com.graphqljava.tutorial.bookdetails.model.Author;
 import com.graphqljava.tutorial.bookdetails.model.Book;
+import com.graphqljava.tutorial.bookdetails.model.BookInput;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -10,9 +11,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-@Service
+//@Service
 public class BookServiceImpl implements BookService{
 
     private List<Map<String, String>> books = Arrays.asList(
@@ -66,7 +66,8 @@ public class BookServiceImpl implements BookService{
     }
 
     @Override
-    public Book addNewBook(Book book){
+    public Book addNewBook(BookInput input){
+        Book book = new Book(input);
         book.setId("book-"+(books.size()+1));
 //        Map<String, String> newBook = ImmutableMap.of("id", book.getId(),
 //                    "name", book.getName(),

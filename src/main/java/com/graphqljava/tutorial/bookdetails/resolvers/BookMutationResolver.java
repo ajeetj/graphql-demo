@@ -14,7 +14,6 @@ public class BookMutationResolver implements GraphQLMutationResolver {
     private BookService bookService;
 
     public Book addBook(BookInput bookInput){
-        Book book = new Book(bookInput);
-        return bookService.addNewBook(book);
+        return bookService.addNewBook(bookInput);
     }
 }
