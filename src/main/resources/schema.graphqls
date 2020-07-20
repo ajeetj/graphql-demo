@@ -13,10 +13,14 @@ type Query{
   getBookById(id: ID): Book
   getAllBooks:[Book]
   getBooksWithAuthor:[Book]
+  getCommentById(id: Int):Comment
+  getAllComments:[Comment]
 }
 
 type Mutation {
   addBook(input: BookInput): Book
+  addComment(input: String): Comment
+  deleteComment(id: Int): String
 }
 
 type Book {
@@ -30,4 +34,9 @@ type Author {
   id: ID
   firstName: String
   lastName: String
+}
+
+type Comment {
+  id: Int
+  text: String
 }
